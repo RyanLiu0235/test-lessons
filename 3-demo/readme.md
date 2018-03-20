@@ -2,14 +2,14 @@
 我们的代码测试是通过了，但是所有代码都有被用到？所有的情况都有用到？
 
 ## 覆盖率
-关于覆盖率，社区里给我们提供了一个方案，叫**istanbul**，就是那个盛产毛毯的地方。据说其作者因为觉得毛毯有覆盖的作用，所以起了这个名字，真是项目取名字的日常尴尬。
+关于覆盖率，社区里给我们提供了一个方案，叫**istanbul**，就是那个盛产毛毯的土耳其城市伊斯坦布尔。据说其作者因为觉得毛毯有覆盖的作用，所以起了这个名字，真是项目取名字的日常尴尬。
 
 我们在之前的`add`函数之外加上一个`minus`函数
 
 ``` js
 const minus = (a, b) => a - b
 ```
-这样一来，我们跑覆盖率的时候就会提醒我们这一行没有执行到。所以我们继续添加测试脚本。
+这样一来，我们跑覆盖率的时候就会显示我们这一行没有执行到。所以我们继续添加测试脚本。
 
 ``` js
 describe('math', () => {
@@ -52,6 +52,27 @@ describe('add', () => {
 })
 ```
 这样，我们对输入的类型做了校验，同时测试用例覆盖到了抛出类型错误的情况。
+
+在这个过程中，我们新添加了一个函数`isNumber`，它内部也有一些逻辑，我们应该对它也写一套测试用例。单元测试的原则是针对代码的**最小可测试单元**进行检查和验证，在JavaScript里，这个指的就是函数。所以既然多出了一个函数，我们应该对它进行测试。
+
+``` js
+describe('isNumber', () => {
+  it('should return false when NaN is passed', () => {
+    assert.equal(isNumber(NaN), false)
+  })
+  it('should return false when other type is passed', () => {
+    assert.equal(isNumber(''), false)
+    assert.equal(isNumber({}), false)
+    assert.equal(isNumber([]), false)
+    assert.equal(isNumber(undefined), false)
+    assert.equal(isNumber(null), false)
+    assert.equal(isNumber(false), false)
+  })
+  it('should return true when number is passed', () => {
+    assert(isNumber(9))
+  })
+})
+```
 
 还有什么需要考虑的？
 

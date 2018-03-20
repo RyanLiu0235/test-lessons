@@ -1,4 +1,4 @@
-const isNumber = test => typeof test === 'number'
+const isNumber = test => typeof test === 'number' && !Number.isNaN(test)
 
 const add = (a, b) => {
   if (isNumber(a) && isNumber(b)) {
@@ -15,4 +15,4 @@ const minus = (a, b) => {
   }
 }
 
-module.exports = { add, minus }
+module.exports = { add, minus, isNumber }

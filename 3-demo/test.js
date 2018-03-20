@@ -32,4 +32,21 @@ describe('math', () => {
       assert.equal(factor2, 2)
     })
   })
+
+  describe('isNumber', () => {
+    it('should return false when NaN is passed', () => {
+      assert.equal(math.isNumber(NaN), false)
+    })
+    it('should return false when other type is passed', () => {
+      assert.equal(math.isNumber(''), false)
+      assert.equal(math.isNumber({}), false)
+      assert.equal(math.isNumber([]), false)
+      assert.equal(math.isNumber(undefined), false)
+      assert.equal(math.isNumber(null), false)
+      assert.equal(math.isNumber(false), false)
+    })
+    it('should return true when number is passed', () => {
+      assert(math.isNumber(9))
+    })
+  })
 })
