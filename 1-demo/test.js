@@ -1,12 +1,11 @@
 const add = require('./')
 
-function test() {
-  const rst = add(1, 2)
-  if (rst === 3) {
+function test(rst, rules) {
+  if (rules(rst)) {
     console.log('test passed!')
   } else {
     console.log('test failed!')
   }
 }
 
-test()
+test(add(1, 2), rst => rst === 3)

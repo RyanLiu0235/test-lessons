@@ -10,16 +10,15 @@ const add = (a, b) => a + b
 
 两个数字输入了之后，我们希望他总是返回两者相加的结果。这时候我们需要写一些脚本来验证他的可行性。
 ``` js
-function test() {
-  const rst = add(1, 2)
-  if (rst === 3) {
+function test(rst, rules) {
+  if (rules(rst)) {
     console.log('test passed!')
   } else {
     console.log('test failed!')
   }
 }
 
-test() // test passed!
+test(add(1, 2), rst => rst === 3) // test passed!
 ```
 
 这样，我们没有使用任何工具，即验证了`add`函数是符合我们预期的。虽然这个测试的脚本完全不可扩展，但是它大致展示了测试的一般步骤。
