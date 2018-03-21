@@ -11,4 +11,5 @@ test-lessons是一套JavaScript测试入门的指南，解释了
 *	断言库，比如**assert**或者**Chai**
 *	不同的断言风格，比如`assert`或者`expect`以及`should`
 *	代码覆盖率，比如**istanbul**
+*	辅助工具，比如**jsdom**和**sinon**
 *	终极测试工具，**Jest**
