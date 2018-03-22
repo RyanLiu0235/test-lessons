@@ -1,9 +1,20 @@
-const { createScript } = require('./')
+const { createScript, doCallback } = require('./')
 const assert = require('assert')
 const jsdom = require('mocha-jsdom')
 const sinon = require('sinon')
 
 const url = 'http://someurl.com'
+
+describe('doCallback', () => {
+  it('should invoke callback in 1000ms', () => {
+    const spy = sinon.spy()
+
+    doCallback(spy)
+    setTimeout(() => {
+      assert(spy.calledOnce)
+    }, 1000)
+  })
+})
 
 describe('createScript', () => {
   jsdom()
