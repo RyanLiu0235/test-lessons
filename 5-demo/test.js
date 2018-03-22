@@ -23,7 +23,6 @@ describe('once', () => {
     assert(spy.calledWith(1, 2, 3))
   })
 
-
   it('should return the return value from the original function', () => {
     const callback = sinon.stub().returns(42)
     const proxy = once(callback)

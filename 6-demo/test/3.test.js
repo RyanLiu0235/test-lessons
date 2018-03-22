@@ -1,4 +1,4 @@
-const math = require('./')
+const math = require('../src/3.js')
 
 const factor1 = 1
 const factor2 = 2
