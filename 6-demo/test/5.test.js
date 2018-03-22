@@ -13,9 +13,8 @@ describe('once', () => {
   it('should call original function with right this and args', () => {
     const mockFn = jest.fn()
     const proxy = once(mockFn)
-    const obj = {}
 
-    proxy.call(obj, 1, 2, 3)
+    proxy(1, 2, 3)
 
     expect(mockFn).toHaveBeenCalledWith(1, 2, 3)
   })
