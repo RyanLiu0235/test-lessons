@@ -1,0 +1,12 @@
+{
+  "name": "6-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "dependencies": {
+    "jest": "^22.4.3"
+  }
+}
