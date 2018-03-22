@@ -1,26 +1,18 @@
 import NsButton from '@/components/button'
-import Vue from 'vue'
+import { mount } from '@vue/test-utils'
 
 describe('components', () => {
   describe('button', () => {
     test('should have tagName `button` and default textContent `button`', () => {
-      const vm = new Vue({
-        template: '<ns-button></ns-button>',
-        components: { NsButton }
-      }).$mount()
-
-      expect(vm.$el.tagName).toBe('BUTTON')
-      expect(vm.$el.textContent).toBe('button')
+      const wrapper = mount(NsButton)
+      expect(wrapper.html()).toBe('<button size="middle" class="ns-button">button</button>')
     })
 
     test('should behave the given props', () => {
-      const vm = new Vue({
-        template: '<ns-button text="submit" size="large"></ns-button>',
-        components: { NsButton }
-      }).$mount()
+      const wrapper = mount(NsButton)
+      wrapper.setProps({ text: 'submit', size: 'large' })
 
-      expect(vm.$el.textContent).toBe('submit')
-      expect(vm.$el.getAttribute('size')).toBe('large')
+      expect(wrapper.html()).toBe('<button size="large" class="ns-button">submit</button>')
     })
   })
 })
