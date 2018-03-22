@@ -1,6 +1,5 @@
 const request = require('request')
 const querystring = require('querystring')
-const fs = require('fs')
 
 const dest = 'http://jsfiddle.net/echo/jsonp/'
 const ajax = data => {
@@ -15,4 +14,10 @@ const ajax = data => {
   })
 }
 
-module.exports = { ajax }
+const delay = (msg, fn) => {
+  setTimeout(() => {
+    fn(msg)
+  }, 1000)
+}
+
+module.exports = { ajax, delay }
