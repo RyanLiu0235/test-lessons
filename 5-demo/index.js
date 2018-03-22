@@ -1,10 +1,12 @@
-const invokeCallback = (greetings, cb) => {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      cb(greetings)
-      resolve()
-    }, 100)
-  })
+const once = fn => {
+  let returnValue, called = false
+  return function() {
+    if (!called) {
+      called = true
+      returnValue = fn.apply(this, arguments)
+    }
+    return returnValue
+  }
 }
 
-module.exports = { invokeCallback }
+module.exports = { once }
