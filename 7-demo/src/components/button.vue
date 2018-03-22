@@ -1,6 +1,7 @@
 <template>
   <button class="ns-button"
-    :size="size">{{text}}</button>
+    :size="size"
+    @click="onClick">{{text}}</button>
 </template>
 <script>
 export default {
@@ -16,6 +17,16 @@ export default {
       type: String,
       default: 'middle',
       validator: val => ['large', 'middle', 'small'].indexOf(val) > -1
+    }
+  },
+  data() {
+    return {
+      times: 0
+    }
+  },
+  methods: {
+    onClick() {
+      this.times++
     }
   }
 }
