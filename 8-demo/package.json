@@ -1,0 +1,12 @@
+{
+  "name": "8-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^22.4.3"
+  },
+  "dependencies": {
+    "request": "^2.85.0"
+  }
+}
