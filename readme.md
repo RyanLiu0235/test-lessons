@@ -13,8 +13,11 @@ test-lessons是一套JavaScript测试入门的指南，解释了
 *	代码覆盖率，比如**istanbul**
 *	辅助工具，比如**jsdom**和**sinon**
 *	终极测试工具，**Jest**
+*	Jest测试Vue单文件组件
 
 这篇指南并没有事无巨细地写，比如很多工具的安装、环境的配置、变量的引入等等，大家自己看demo里的代码自行体会。
+
+另外，本课程还附带了一个PPT放在[google docs](https://docs.google.com/presentation/d/1Iz0UNHNV3Jf5XjaMzvMC8GXoUbpNN-6ZHBUbMrVm21A/edit?usp=sharing)上。欢迎大家分享。
 
 所有的栗子里，请大家都运行一个命令来执行测试：
 ``` shell
